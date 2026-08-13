@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Request volunteer patient advocacy support from Loreen DeGandi, Independent Patient Advocate." />
+  <title>Request Support | Loreen DeGandi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html" aria-label="Loreen DeGandi home">
+        <span class="brand-name">Loreen DeGandi</span>
+        <span class="brand-role">Independent Patient Advocate</span>
+      </a>
+
+      <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="site-nav">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
+        <a href="index.html#about">About</a>
+        <a href="index.html#services">How I Help</a>
+        <a href="index.html#volunteer">Volunteer Advocacy</a>
+        <a class="nav-cta" href="mailto:loreendegandi.advocacy@outlook.com">Email Me</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="intake-hero">
+      <div class="floral floral-one" aria-hidden="true">
+        <svg viewBox="0 0 220 220" role="img">
+          <path d="M29 199c48-75 82-103 159-166" />
+          <path d="M66 151c-19-4-34-19-37-38 20-2 38 7 47 24" />
+          <path d="M107 108c-10-19-7-40 7-55 15 15 19 36 10 56" />
+          <path d="M147 73c1-18 12-35 29-43 7 19 1 39-15 51" />
+          <circle cx="160" cy="68" r="7" />
+          <circle cx="122" cy="105" r="6" />
+          <circle cx="77" cy="143" r="5" />
+        </svg>
+      </div>
+      <div class="container intake-hero-inner">
+        <a class="back-link" href="index.html">← Back to home</a>
+        <span class="section-kicker">Volunteer Advocacy</span>
+        <h1>Request support</h1>
+        <p>Tell me a little about what you are navigating and where you would most like help. This first step is intentionally brief.</p>
+      </div>
+    </section>
+
+    <section class="section intake-section">
+      <div class="container intake-layout">
+        <aside class="intake-aside">
+          <div class="intake-note sage-note">
+            <span class="section-kicker">Before You Begin</span>
+            <h2>Keep this first message simple.</h2>
+            <p>Please do not include medical records, Social Security numbers, insurance member IDs, financial account information, or other highly sensitive details.</p>
+          </div>
+
+          <div class="intake-note blue-note">
+            <strong>What I can help with</strong>
+            <p>Appointment preparation, healthcare research, information organization, care navigation, caregiver support, and helping you clarify questions and goals.</p>
+          </div>
+
+          <div class="intake-note rose-note">
+            <strong>Important boundary</strong>
+            <p>Support is nonclinical and does not replace a doctor, nurse, attorney, emergency service, or other licensed professional. Volunteer availability is limited.</p>
+          </div>
+        </aside>
+
+        <form class="intake-form" id="advocacy-intake-form">
+          <div class="form-intro">
+            <div class="mini-flower" aria-hidden="true">❀</div>
+            <h2>A few details to get started</h2>
+            <p>When you submit, your email app will open with a prepared message addressed to Loreen. Nothing entered here is stored by this website.</p>
+          </div>
+
+          <div class="form-grid two-col">
+            <label>
+              Your name <span aria-hidden="true">*</span>
+              <input type="text" name="name" autocomplete="name" required>
+            </label>
+            <label>
+              Your email <span aria-hidden="true">*</span>
+              <input type="email" name="email" autocomplete="email" required>
+            </label>
+          </div>
+
+          <label>
+            I am reaching out as… <span aria-hidden="true">*</span>
+            <select name="role" required>
+              <option value="">Choose one</option>
+              <option>Patient</option>
+              <option>Parent or caregiver</option>
+              <option>Family member or support person</option>
+              <option>Other</option>
+            </select>
+          </label>
+
+          <fieldset>
+            <legend>What kind of support are you looking for? <span aria-hidden="true">*</span></legend>
+            <div class="check-grid">
+              <label class="check-option"><input type="checkbox" name="support" value="Appointment preparation"> <span>Appointment preparation</span></label>
+              <label class="check-option"><input type="checkbox" name="support" value="Research support"> <span>Research support</span></label>
+              <label class="check-option"><input type="checkbox" name="support" value="Medical information organization"> <span>Medical information organization</span></label>
+              <label class="check-option"><input type="checkbox" name="support" value="Care navigation"> <span>Care navigation</span></label>
+              <label class="check-option"><input type="checkbox" name="support" value="Caregiver support"> <span>Caregiver support</span></label>
+              <label class="check-option"><input type="checkbox" name="support" value="Clarifying questions and goals"> <span>Clarifying questions & goals</span></label>
+              <label class="check-option"><input type="checkbox" name="support" value="Other"> <span>Something else</span></label>
+            </div>
+            <p class="field-hint" id="support-hint">Select at least one.</p>
+          </fieldset>
+
+          <label>
+            In a few sentences, what are you hoping for help with? <span aria-hidden="true">*</span>
+            <textarea name="situation" rows="5" maxlength="1200" required placeholder="A brief overview is enough. Please leave out highly sensitive details."></textarea>
+          </label>
+
+          <label>
+            What would feel most helpful as a next step?
+            <textarea name="goal" rows="3" maxlength="700" placeholder="For example: preparing questions for an appointment, finding rehabilitation resources, or organizing a medical timeline."></textarea>
+          </label>
+
+          <label>
+            Is there a date or appointment you are preparing for?
+            <input type="text" name="timeframe" placeholder="Optional — for example, September 3 appointment">
+          </label>
+
+          <div class="acknowledgements">
+            <label class="check-option acknowledgement"><input type="checkbox" name="nonclinical" required> <span>I understand this is nonclinical advocacy support and not medical, legal, or emergency advice.</span></label>
+            <label class="check-option acknowledgement"><input type="checkbox" name="privacy" required> <span>I understand ordinary email is not a secure place to send highly sensitive medical or identifying information.</span></label>
+          </div>
+
+          <div class="intake-submit-row">
+            <button class="button button-primary" type="submit">Prepare my request</button>
+            <a class="button button-secondary" href="mailto:loreendegandi.advocacy@outlook.com?subject=Patient%20Advocacy%20Inquiry">Email instead</a>
+          </div>
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+          <p class="form-note">If your email app does not open, you can email <a href="mailto:loreendegandi.advocacy@outlook.com">loreendegandi.advocacy@outlook.com</a> directly.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <strong>Loreen DeGandi</strong>
+        <span>Independent Patient Advocate</span>
+      </div>
+      <p>Compassionate support beyond the diagnosis.</p>
+      <p class="copyright">© <span id="year"></span> Loreen DeGandi. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
