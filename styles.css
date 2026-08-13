@@ -968,3 +968,209 @@ button, input, textarea { font: inherit; }
     border-radius: 22px;
   }
 }
+
+
+/* === V6 botanical refresh === */
+/* More visible, but still gentle, botanical details */
+
+:root {
+  --botanical-ink: rgba(111, 136, 116, .26);
+  --botanical-rose: rgba(216, 178, 184, .34);
+  --botanical-blue: rgba(200, 220, 237, .36);
+}
+
+/* Make Loreen's portrait intentionally smaller and airier */
+.home-about-portrait .portrait-photo-shell {
+  width: min(100%, 275px) !important;
+  padding: 11px !important;
+  border-radius: 30px !important;
+}
+
+.about-portrait-card .portrait-frame--photo {
+  width: min(100%, 315px) !important;
+  padding: 12px !important;
+  border-radius: 34px !important;
+}
+
+.home-about-portrait .portrait-photo,
+.about-portrait-card .portrait-photo {
+  border-radius: 22px !important;
+}
+
+.home-about-portrait {
+  justify-self: center;
+}
+
+/* A soft botanical garden behind the About section */
+.about {
+  background:
+    radial-gradient(circle at 10% 18%, rgba(200,220,237,.18), transparent 22%),
+    radial-gradient(circle at 92% 74%, rgba(216,178,184,.17), transparent 23%),
+    #fffdf9;
+}
+
+.about::before {
+  width: 310px !important;
+  height: 310px !important;
+  right: -22px !important;
+  top: 18px !important;
+  opacity: .22 !important;
+  transform: rotate(4deg) !important;
+}
+
+.about::after {
+  content: "";
+  position: absolute;
+  left: -45px;
+  bottom: -15px;
+  width: 260px;
+  height: 260px;
+  opacity: .16;
+  pointer-events: none;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 260 260'%3E%3Cg fill='none' stroke='%236f8874' stroke-width='2.2' stroke-linecap='round'%3E%3Cpath d='M25 232C70 163 129 103 221 35'/%3E%3Cpath d='M58 184c-21-7-36-25-39-48 23 0 44 13 53 34'/%3E%3Cpath d='M104 140c-13-22-10-49 7-67 19 17 24 44 14 67'/%3E%3Cpath d='M156 95c0-22 14-43 35-52 9 23 2 47-17 61'/%3E%3C/g%3E%3Cg fill='%23c8dced'%3E%3Ccircle cx='176' cy='91' r='7'/%3E%3Ccircle cx='121' cy='137' r='6'/%3E%3Ccircle cx='70' cy='179' r='6'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Delicate leaf sprigs that frame the Services area */
+.services {
+  position: relative;
+  overflow: hidden;
+}
+
+.services::before,
+.services::after {
+  content: "";
+  position: absolute;
+  width: 220px;
+  height: 300px;
+  opacity: .12;
+  pointer-events: none;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 260'%3E%3Cg fill='none' stroke='%236f8874' stroke-width='2.2' stroke-linecap='round'%3E%3Cpath d='M88 250C92 186 88 118 105 14'/%3E%3Cpath d='M96 195c-28-7-45-28-45-55 28 2 48 17 55 42'/%3E%3Cpath d='M101 151c25-10 39-33 34-59-26 7-43 26-43 51'/%3E%3Cpath d='M104 102c-21-11-32-33-27-56 24 8 38 26 38 49'/%3E%3Cpath d='M109 62c19-10 30-28 27-48-21 5-36 22-38 42'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.services::before {
+  left: -65px;
+  top: 80px;
+  transform: rotate(-10deg);
+}
+
+.services::after {
+  right: -70px;
+  bottom: 50px;
+  transform: rotate(170deg);
+}
+
+/* Give cards a little more of the soft garden feel */
+.service-card {
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(2px);
+}
+
+.service-card::after {
+  content: "";
+  position: absolute;
+  width: 92px;
+  height: 92px;
+  right: -26px;
+  bottom: -26px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,255,255,.48), rgba(255,255,255,0) 68%);
+  pointer-events: none;
+}
+
+/* More visible floral frame on the About page hero */
+.about-hero {
+  background:
+    radial-gradient(circle at 84% 14%, rgba(200,220,237,.72), transparent 25%),
+    radial-gradient(circle at 13% 84%, rgba(216,178,184,.36), transparent 24%),
+    linear-gradient(145deg, #fbf8f2 0%, #f6faf6 58%, #faf4f5 100%) !important;
+}
+
+.about-hero .floral-one {
+  width: 315px;
+  opacity: .27;
+  right: 0;
+  top: -10px;
+}
+
+.about-hero::after {
+  content: "";
+  position: absolute;
+  left: -35px;
+  bottom: -40px;
+  width: 280px;
+  height: 280px;
+  opacity: .14;
+  pointer-events: none;
+  background-repeat: no-repeat;
+  background-size: contain;
+  transform: rotate(-12deg);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 220 220'%3E%3Cg fill='none' stroke='%236f8874' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M29 199c48-75 82-103 159-166'/%3E%3Cpath d='M66 151c-19-4-34-19-37-38 20-2 38 7 47 24'/%3E%3Cpath d='M107 108c-10-19-7-40 7-55 15 15 19 36 10 56'/%3E%3Cpath d='M147 73c1-18 12-35 29-43 7 19 1 39-15 51'/%3E%3C/g%3E%3Cg fill='%23d8b2b8'%3E%3Ccircle cx='160' cy='68' r='7'/%3E%3Ccircle cx='122' cy='105' r='6'/%3E%3Ccircle cx='77' cy='143' r='5'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Botanical paper feel through lower sections */
+.approach,
+.why-section,
+.contact {
+  background-image:
+    radial-gradient(circle at 92% 16%, rgba(169,189,169,.10), transparent 19%),
+    radial-gradient(circle at 7% 82%, rgba(200,220,237,.12), transparent 19%);
+}
+
+.contact-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-card::after {
+  width: 170px !important;
+  height: 170px !important;
+  opacity: .18 !important;
+}
+
+/* A tiny botanical separator without adding visual clutter */
+.section-heading.centered::after {
+  content: "❀  ·  ❀  ·  ❀";
+  display: block;
+  margin: 18px auto 0;
+  color: rgba(166,120,130,.44);
+  font-size: .78rem;
+  letter-spacing: .35em;
+}
+
+@media (max-width: 900px) {
+  .home-about-portrait .portrait-photo-shell {
+    width: min(100%, 255px) !important;
+  }
+  .about-portrait-card .portrait-frame--photo {
+    width: min(100%, 285px) !important;
+  }
+  .about::before,
+  .services::before,
+  .services::after,
+  .about-hero::after {
+    opacity: .09 !important;
+  }
+}
+
+@media (max-width: 620px) {
+  .home-about-portrait .portrait-photo-shell {
+    width: min(100%, 225px) !important;
+  }
+  .about-portrait-card .portrait-frame--photo {
+    width: min(100%, 245px) !important;
+  }
+  .about::before {
+    width: 220px !important;
+    height: 220px !important;
+    right: -85px !important;
+  }
+  .services::before,
+  .services::after {
+    width: 150px;
+  }
+}
