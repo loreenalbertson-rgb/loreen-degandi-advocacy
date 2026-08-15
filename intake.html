@@ -4,11 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Request volunteer patient advocacy support from Loreen DeGandi, Independent Patient Advocate." />
+  <meta name="theme-color" content="#f7fbfa" />
   <title>Request Support | Loreen DeGandi</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=6" />
+  <link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=4" />
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -16,41 +17,28 @@
   <header class="site-header">
     <div class="container nav-wrap">
       <a class="brand" href="index.html" aria-label="Loreen DeGandi home">
-        <span class="brand-name">Loreen DeGandi</span>
-        <span class="brand-role">Independent Patient Advocate</span>
+        <span class="brand-symbol" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M24 40S7 31 7 18c0-8 10-11 17-3 7-8 17-5 17 3 0 13-17 22-17 22Z"/><path d="M10 25h8l3-7 5 14 4-8h8"/></svg></span>
+        <span class="brand-text"><span class="brand-name">Loreen DeGandi</span><span class="brand-role">Independent Patient Advocate</span></span>
       </a>
-
-      <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="site-nav">
-        <span></span><span></span><span></span>
-      </button>
-
+      <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span></span></button>
       <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
         <a href="about.html">About</a>
         <a href="index.html#services">How I Help</a>
+        <a href="index.html#approach">My Approach</a>
         <a href="index.html#volunteer">Volunteer Advocacy</a>
-        <a class="nav-cta" href="mailto:loreendegandi.advocacy@outlook.com">Email Me</a>
+        <a href="intake.html" aria-current="page">Request Support</a>
+        <a class="nav-cta" href="mailto:loreendegandi.advocacy@outlook.com">Contact</a>
       </nav>
     </div>
   </header>
 
   <main id="main">
-    <section class="intake-hero">
-      <div class="floral floral-one" aria-hidden="true">
-        <svg viewBox="0 0 220 220" role="img">
-          <path d="M29 199c48-75 82-103 159-166" />
-          <path d="M66 151c-19-4-34-19-37-38 20-2 38 7 47 24" />
-          <path d="M107 108c-10-19-7-40 7-55 15 15 19 36 10 56" />
-          <path d="M147 73c1-18 12-35 29-43 7 19 1 39-15 51" />
-          <circle cx="160" cy="68" r="7" />
-          <circle cx="122" cy="105" r="6" />
-          <circle cx="77" cy="143" r="5" />
-        </svg>
-      </div>
-      <div class="container intake-hero-inner">
+    <section class="page-hero">
+      <div class="container">
         <a class="back-link" href="index.html">← Back to home</a>
         <span class="section-kicker">Volunteer Advocacy</span>
-        <h1>Request support</h1>
-        <p>Tell me a little about what you are navigating and where you would most like help. This first step is intentionally brief.</p>
+        <h1>Tell me what you are navigating. <em>We can start with the next step.</em></h1>
+        <p>This first message is intentionally simple. You do not need to send records or explain every medical detail to ask for support.</p>
       </div>
     </section>
 
@@ -59,41 +47,32 @@
         <aside class="intake-aside">
           <div class="intake-note sage-note">
             <span class="section-kicker">Before You Begin</span>
-            <h2>Keep this first message simple.</h2>
-            <p>Please do not include medical records, Social Security numbers, insurance member IDs, financial account information, or other highly sensitive details.</p>
+            <h2>Please keep sensitive details out of this form.</h2>
+            <p>Do not include medical records, Social Security numbers, insurance member IDs, account numbers, or other highly sensitive identifying information.</p>
           </div>
-
           <div class="intake-note blue-note">
-            <strong>What I can help with</strong>
-            <p>Appointment preparation, healthcare research, information organization, care navigation, caregiver support, and helping you clarify questions and goals.</p>
+            <strong>Examples of support</strong>
+            <p>Appointment preparation, medical research, care navigation, information organization, resource finding, caregiver support, and clarifying questions or goals.</p>
           </div>
-
           <div class="intake-note rose-note">
             <strong>Important boundary</strong>
-            <p>Support is nonclinical and does not replace a doctor, nurse, attorney, emergency service, or other licensed professional. Volunteer availability is limited.</p>
+            <p>Support is nonclinical. I do not diagnose, prescribe, provide treatment, make medical decisions for you, provide legal advice, or offer emergency services.</p>
           </div>
         </aside>
 
-        <form class="intake-form" id="advocacy-intake-form">
+        <form class="intake-form" id="advocacy-intake-form" novalidate>
           <div class="form-intro">
-            <div class="mini-flower" aria-hidden="true">❀</div>
+            <span class="form-intro-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><rect x="7" y="10" width="34" height="28" rx="4"/><path d="m9 14 15 12 15-12"/><path d="M34 6v8M30 10h8"/></svg></span>
             <h2>A few details to get started</h2>
-            <p>When you submit, your email app will open with a prepared message addressed to Loreen. Nothing entered here is stored by this website.</p>
+            <p>When you choose “Prepare my request,” your email app will open with a message addressed to Loreen. This website does not store what you enter.</p>
           </div>
 
           <div class="form-grid two-col">
-            <label>
-              Your name <span aria-hidden="true">*</span>
-              <input type="text" name="name" autocomplete="name" required>
-            </label>
-            <label>
-              Your email <span aria-hidden="true">*</span>
-              <input type="email" name="email" autocomplete="email" required>
-            </label>
+            <label>Your name <span aria-hidden="true">*</span><input type="text" name="name" autocomplete="name" required /></label>
+            <label>Your email <span aria-hidden="true">*</span><input type="email" name="email" autocomplete="email" required /></label>
           </div>
 
-          <label>
-            I am reaching out as… <span aria-hidden="true">*</span>
+          <label>I am reaching out as… <span aria-hidden="true">*</span>
             <select name="role" required>
               <option value="">Choose one</option>
               <option>Patient</option>
@@ -106,43 +85,41 @@
           <fieldset>
             <legend>What kind of support are you looking for? <span aria-hidden="true">*</span></legend>
             <div class="check-grid">
-              <label class="check-option"><input type="checkbox" name="support" value="Appointment preparation"> <span>Appointment preparation</span></label>
-              <label class="check-option"><input type="checkbox" name="support" value="Research support"> <span>Research support</span></label>
-              <label class="check-option"><input type="checkbox" name="support" value="Medical information organization"> <span>Medical information organization</span></label>
-              <label class="check-option"><input type="checkbox" name="support" value="Care navigation"> <span>Care navigation</span></label>
-              <label class="check-option"><input type="checkbox" name="support" value="Caregiver support"> <span>Caregiver support</span></label>
-              <label class="check-option"><input type="checkbox" name="support" value="Clarifying questions and goals"> <span>Clarifying questions & goals</span></label>
-              <label class="check-option"><input type="checkbox" name="support" value="Other"> <span>Something else</span></label>
+              <label class="check-option"><input type="checkbox" name="support" value="Appointment preparation" /> <span>Appointment preparation</span></label>
+              <label class="check-option"><input type="checkbox" name="support" value="Medical research" /> <span>Medical research</span></label>
+              <label class="check-option"><input type="checkbox" name="support" value="Information organization" /> <span>Information organization</span></label>
+              <label class="check-option"><input type="checkbox" name="support" value="Care navigation" /> <span>Care navigation</span></label>
+              <label class="check-option"><input type="checkbox" name="support" value="Resource connection" /> <span>Resource connection</span></label>
+              <label class="check-option"><input type="checkbox" name="support" value="Caregiver support" /> <span>Caregiver support</span></label>
+              <label class="check-option"><input type="checkbox" name="support" value="Clarifying patient questions and goals" /> <span>Clarifying questions and goals</span></label>
+              <label class="check-option"><input type="checkbox" name="support" value="Other" /> <span>Something else</span></label>
             </div>
             <p class="field-hint" id="support-hint">Select at least one.</p>
           </fieldset>
 
-          <label>
-            In a few sentences, what are you hoping for help with? <span aria-hidden="true">*</span>
+          <label>In a few sentences, what are you hoping for help with? <span aria-hidden="true">*</span>
             <textarea name="situation" rows="5" maxlength="1200" required placeholder="A brief overview is enough. Please leave out highly sensitive details."></textarea>
           </label>
 
-          <label>
-            What would feel most helpful as a next step?
+          <label>What would feel most helpful as a next step?
             <textarea name="goal" rows="3" maxlength="700" placeholder="For example: preparing questions for an appointment, finding rehabilitation resources, or organizing a medical timeline."></textarea>
           </label>
 
-          <label>
-            Is there a date or appointment you are preparing for?
-            <input type="text" name="timeframe" placeholder="Optional — for example, September 3 appointment">
+          <label>Is there a date or appointment you are preparing for?
+            <input type="text" name="timeframe" maxlength="150" placeholder="Optional, for example: September 3 appointment" />
           </label>
 
           <div class="acknowledgements">
-            <label class="check-option acknowledgement"><input type="checkbox" name="nonclinical" required> <span>I understand this is nonclinical advocacy support and not medical, legal, or emergency advice.</span></label>
-            <label class="check-option acknowledgement"><input type="checkbox" name="privacy" required> <span>I understand ordinary email is not a secure place to send highly sensitive medical or identifying information.</span></label>
+            <label class="check-option acknowledgement"><input type="checkbox" name="nonclinical" required /> <span>I understand this is nonclinical advocacy support and not medical, legal, or emergency advice.</span></label>
+            <label class="check-option acknowledgement"><input type="checkbox" name="privacy" required /> <span>I understand ordinary email is not a secure place to send highly sensitive medical or identifying information.</span></label>
           </div>
 
           <div class="intake-submit-row">
-            <button class="button button-primary" type="submit">Prepare my request</button>
-            <a class="button button-secondary" href="mailto:loreendegandi.advocacy@outlook.com?subject=Patient%20Advocacy%20Inquiry">Email instead</a>
+            <button class="button button-primary" type="submit">Prepare My Request</button>
+            <a class="button button-secondary" href="mailto:loreendegandi.advocacy@outlook.com?subject=Patient%20Advocacy%20Inquiry">Email Instead</a>
           </div>
           <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
-          <p class="form-note">If your email app does not open, you can email <a href="mailto:loreendegandi.advocacy@outlook.com">loreendegandi.advocacy@outlook.com</a> directly.</p>
+          <p class="form-note">If your email app does not open, email <a href="mailto:loreendegandi.advocacy@outlook.com">loreendegandi.advocacy@outlook.com</a> directly.</p>
         </form>
       </div>
     </section>
@@ -150,15 +127,12 @@
 
   <footer class="site-footer">
     <div class="container footer-grid">
-      <div>
-        <strong>Loreen DeGandi</strong>
-        <span>Independent Patient Advocate</span>
-      </div>
-      <p>Compassionate support beyond the diagnosis.</p>
+      <div class="footer-brand"><span class="footer-heart" aria-hidden="true">♡</span><div><strong>Loreen DeGandi</strong><span>Independent Patient Advocate</span></div></div>
+      <p>Compassion. Clarity. Advocacy.</p>
+      <nav class="footer-nav" aria-label="Footer navigation"><a href="index.html">Home</a><a href="about.html">About</a><a href="mailto:loreendegandi.advocacy@outlook.com">Email</a></nav>
       <p class="copyright">© <span id="year"></span> Loreen DeGandi. All rights reserved.</p>
     </div>
   </footer>
-
-  <script src="script.js?v=6"></script>
+  <script src="script.js?v=4"></script>
 </body>
 </html>

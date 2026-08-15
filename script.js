@@ -1,41 +1,77 @@
 const menuButton = document.querySelector('.menu-toggle');
-const nav = document.querySelector('.site-nav');
+const navigation = document.querySelector('.site-nav');
+const navigationLinks = document.querySelectorAll('.site-nav a');
+const yearTarget = document.querySelector('#year');
 
-if (menuButton && nav) {
+if (yearTarget) {
+  yearTarget.textContent = new Date().getFullYear();
+}
+
+if (menuButton && navigation) {
   menuButton.addEventListener('click', () => {
-    const isOpen = nav.classList.toggle('open');
-    menuButton.setAttribute('aria-expanded', String(isOpen));
+    const isOpen = menuButton.getAttribute('aria-expanded') === 'true';
+    menuButton.setAttribute('aria-expanded', String(!isOpen));
+    menuButton.setAttribute('aria-label', isOpen ? 'Open navigation' : 'Close navigation');
+    navigation.classList.toggle('is-open', !isOpen);
+    document.body.classList.toggle('menu-open', !isOpen);
   });
 
-  nav.querySelectorAll('a').forEach((link) => {
+  navigationLinks.forEach((link) => {
     link.addEventListener('click', () => {
-      nav.classList.remove('open');
       menuButton.setAttribute('aria-expanded', 'false');
+      menuButton.setAttribute('aria-label', 'Open navigation');
+      navigation.classList.remove('is-open');
+      document.body.classList.remove('menu-open');
     });
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 900) {
+      menuButton.setAttribute('aria-expanded', 'false');
+      menuButton.setAttribute('aria-label', 'Open navigation');
+      navigation.classList.remove('is-open');
+      document.body.classList.remove('menu-open');
+    }
   });
 }
 
-const year = document.getElementById('year');
-if (year) year.textContent = new Date().getFullYear();
-
-const intakeForm = document.getElementById('advocacy-intake-form');
-const formStatus = document.getElementById('form-status');
+const intakeForm = document.querySelector('#advocacy-intake-form');
 
 if (intakeForm) {
+  const supportHint = document.querySelector('#support-hint');
+  const formStatus = document.querySelector('#form-status');
+  const supportChecks = [...intakeForm.querySelectorAll('input[name="support"]')];
+
+  const setStatus = (message, type = '') => {
+    if (!formStatus) return;
+    formStatus.textContent = message;
+    formStatus.className = `form-status ${type}`.trim();
+  };
+
+  supportChecks.forEach((checkbox) => {
+    checkbox.addEventListener('change', () => {
+      const hasSelection = supportChecks.some((item) => item.checked);
+      if (supportHint) supportHint.classList.toggle('error', !hasSelection);
+    });
+  });
+
   intakeForm.addEventListener('submit', (event) => {
     event.preventDefault();
+    setStatus('');
 
-    const selectedSupport = [...intakeForm.querySelectorAll('input[name="support"]:checked')]
-      .map((input) => input.value);
-
-    if (selectedSupport.length === 0) {
-      if (formStatus) formStatus.textContent = 'Please select at least one type of support.';
-      const firstSupport = intakeForm.querySelector('input[name="support"]');
-      if (firstSupport) firstSupport.focus();
+    const selectedSupport = supportChecks.filter((item) => item.checked).map((item) => item.value);
+    if (!selectedSupport.length) {
+      if (supportHint) supportHint.classList.add('error');
+      setStatus('Please select at least one type of support.', 'error');
+      supportChecks[0]?.focus();
       return;
     }
 
-    if (!intakeForm.reportValidity()) return;
+    if (!intakeForm.checkValidity()) {
+      intakeForm.reportValidity();
+      setStatus('Please complete the required fields before preparing your request.', 'error');
+      return;
+    }
 
     const data = new FormData(intakeForm);
     const name = String(data.get('name') || '').trim();
@@ -45,32 +81,33 @@ if (intakeForm) {
     const goal = String(data.get('goal') || '').trim();
     const timeframe = String(data.get('timeframe') || '').trim();
 
-    const subject = `Volunteer advocacy request from ${name}`;
+    const subject = `Patient Advocacy Support Request from ${name}`;
     const body = [
       'Hello Loreen,',
       '',
-      'I would like to request volunteer patient advocacy support.',
+      'I am reaching out to request volunteer patient advocacy support.',
       '',
       `Name: ${name}`,
       `Email: ${email}`,
       `I am reaching out as: ${role}`,
-      `Support requested: ${selectedSupport.join(', ')}`,
+      `Support I am looking for: ${selectedSupport.join(', ')}`,
       '',
       'Brief overview:',
       situation,
       '',
-      'Most helpful next step:',
+      'What would feel most helpful as a next step:',
       goal || 'Not specified',
       '',
-      'Upcoming date or appointment:',
+      'Date or appointment I am preparing for:',
       timeframe || 'Not specified',
       '',
-      'I understand that this is nonclinical advocacy support and that ordinary email is not a secure place for highly sensitive information.'
+      'I understand this is nonclinical advocacy support and that ordinary email is not a secure place for highly sensitive information.',
+      '',
+      'Thank you.'
     ].join('\n');
 
-    if (formStatus) formStatus.textContent = 'Opening your email app with your request…';
-
     const mailto = `mailto:loreendegandi.advocacy@outlook.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    setStatus('Your email request is ready. Opening your email app now.', 'success');
     window.location.href = mailto;
   });
 }
