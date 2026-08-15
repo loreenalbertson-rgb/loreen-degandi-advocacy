@@ -1,11 +1,39 @@
 const menuButton = document.querySelector('.menu-toggle');
 const navigation = document.querySelector('.site-nav');
-const navigationLinks = document.querySelectorAll('.site-nav a');
 const yearTarget = document.querySelector('#year');
 
 if (yearTarget) {
   yearTarget.textContent = new Date().getFullYear();
 }
+
+// Keep the Advocacy Blog easy to reach from every page without duplicating navigation markup.
+if (navigation && !navigation.querySelector('a[href="blog.html"]')) {
+  const requestSupportLink = navigation.querySelector('a[href="intake.html"]');
+  const blogLink = document.createElement('a');
+  blogLink.href = 'blog.html';
+  blogLink.textContent = 'Blog';
+  if (requestSupportLink) {
+    navigation.insertBefore(blogLink, requestSupportLink);
+  } else {
+    navigation.appendChild(blogLink);
+  }
+}
+
+document.querySelectorAll('.footer-nav').forEach((footerNav) => {
+  if (!footerNav.querySelector('a[href="blog.html"]')) {
+    const requestSupportLink = footerNav.querySelector('a[href="intake.html"]');
+    const blogLink = document.createElement('a');
+    blogLink.href = 'blog.html';
+    blogLink.textContent = 'Blog';
+    if (requestSupportLink) {
+      footerNav.insertBefore(blogLink, requestSupportLink);
+    } else {
+      footerNav.appendChild(blogLink);
+    }
+  }
+});
+
+const navigationLinks = document.querySelectorAll('.site-nav a');
 
 if (menuButton && navigation) {
   menuButton.addEventListener('click', () => {
